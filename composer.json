@@ -1,0 +1,30 @@
+{
+    "name": "mahocommerce/maho-starter",
+    "license": [
+        "OSL-3.0",
+        "AFL-3.0"
+    ],
+    "type": "project",
+    "minimum-stability": "dev",
+    "require": {
+        "mahocommerce/maho": "*",
+        "fballiano/openmage-cssjs-minify": "dev-main",
+        "fballiano/openmage-defer-javascripts": "dev-master"
+    },
+    "config": {
+        "allow-plugins": {
+            "cweagans/composer-patches": true,
+            "magento-hackathon/magento-composer-installer": false,
+            "mahocommerce/maho-composer-plugin": true
+        },
+        "audit": {
+            "ignore": {
+                "CVE-2024-29881": "Fixed in https://github.com/MahoCommerce/maho/commit/4868c7f2876d99f9a70694be07bf3f8473b16aea"
+            }
+        },
+        "optimize-autoloader": true
+    },
+    "extra": {
+        "enable-patching": true
+    }
+}

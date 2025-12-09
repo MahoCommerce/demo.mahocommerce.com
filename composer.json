@@ -7,9 +7,7 @@
     "type": "project",
     "minimum-stability": "dev",
     "require": {
-        "mahocommerce/maho": "*",
-        "fballiano/openmage-cssjs-minify": "dev-main",
-        "fballiano/openmage-defer-javascripts": "dev-master"
+        "mahocommerce/maho": "*"
     },
     "config": {
         "allow-plugins": {

@@ -13,13 +13,8 @@
     },
     "config": {
         "allow-plugins": {
-            "cweagans/composer-patches": true,
-            "magento-hackathon/magento-composer-installer": false,
             "mahocommerce/maho-composer-plugin": true
         },
         "optimize-autoloader": true
-    },
-    "extra": {
-        "enable-patching": true
     }
 }

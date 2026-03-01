@@ -33,10 +33,31 @@
             margin-bottom: 2.5rem;
         }
 
+        h1 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        p {
+            color: #666;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .status {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            margin-top: 1.5rem;
+            color: #999;
+            font-size: 0.875rem;
+        }
+
         .spinner {
-            width: 48px;
-            height: 48px;
-            margin: 0 auto 2rem;
+            width: 16px;
+            height: 16px;
             animation: rotate 1.4s linear infinite;
         }
 
@@ -64,47 +85,21 @@
                 stroke-dashoffset: -124;
             }
         }
-
-        h1 {
-            font-size: 1.4rem;
-            font-weight: 600;
-            margin-bottom: 0.75rem;
-        }
-
-        p {
-            color: #666;
-            font-size: 1rem;
-            line-height: 1.6;
-        }
-
-        .refresh {
-            display: inline-block;
-            margin-top: 1.5rem;
-            color: #231f20;
-            font-size: 0.875rem;
-            text-decoration: none;
-            border-bottom: 1px solid #d7df22;
-            padding-bottom: 1px;
-            transition: border-color 0.2s;
-        }
-
-        .refresh:hover {
-            border-color: #231f20;
-        }
     </style>
 </head>
 <body>
     <div class="container">
         <img class="logo" src="/skin/frontend/base/default/images/logo.svg" alt="Maho">
 
-        <svg class="spinner" viewBox="0 0 50 50">
-            <circle cx="25" cy="25" r="20" fill="none" stroke-width="4"/>
-        </svg>
-
         <h1>Demo is resetting</h1>
-        <p>Fresh data is being installed. This usually takes less than a minute.</p>
+        <p>Fresh sample data is being installed, please wait.</p>
 
-        <a href="" class="refresh">Refresh page</a>
+        <div class="status">
+            <svg class="spinner" viewBox="0 0 50 50">
+                <circle cx="25" cy="25" r="20" fill="none" stroke-width="4"/>
+            </svg>
+            This usually takes less than a minute
+        </div>
     </div>
 
     <script>setTimeout(() => location.reload(), 15000);</script>

@@ -17,18 +17,3 @@ services:
       - .docker/config:/config
     user: "1000:1000"
     tty: true
-  mysql:
-    container_name: mysql
-    image: mysql:latest
-    environment:
-      - MYSQL_DATABASE=maho
-      - MYSQL_USER=maho
-      - MYSQL_PASSWORD=maho
-      - MYSQL_ROOT_PASSWORD=Jnsdnao374dfbNJsdns
-    ports:
-      - "3306:3306"
-    restart: unless-stopped
-    volumes:
-      - mysql-data:/var/lib/mysql
-volumes:
-  mysql-data:

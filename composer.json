@@ -13,6 +13,9 @@
         "allow-plugins": {
             "mahocommerce/maho-composer-plugin": true
         },
-        "optimize-autoloader": true
+        "optimize-autoloader": true,
+        "platform": {
+            "php": "8.3"
+        }
     }
 }

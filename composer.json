@@ -7,11 +7,15 @@
     "type": "project",
     "minimum-stability": "dev",
     "require": {
-        "mahocommerce/maho": "*"
+        "mahocommerce/maho": "*",
+        "mahocommerce/maho-language-de_de": "*",
+        "mahocommerce/maho-language-fr_fr": "*",
+        "cweagans/composer-patches": "^1.7"
     },
     "config": {
         "allow-plugins": {
-            "mahocommerce/maho-composer-plugin": true
+            "mahocommerce/maho-composer-plugin": true,
+            "cweagans/composer-patches": true
         },
         "optimize-autoloader": true,
         "platform": {

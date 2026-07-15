@@ -8,3 +8,7 @@ sleep 10
 docker exec -it php ./maho migrate
 docker exec -it php ./maho cache:flush
 docker exec -it php ./maho index:reindex:all
+
+# Each build orphans the previous maho/php image; without this they accumulate.
+docker image prune -f
+docker builder prune -af --filter "until=168h"

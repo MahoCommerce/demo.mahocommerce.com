@@ -6,10 +6,11 @@
     ],
     "type": "project",
     "minimum-stability": "dev",
+    "prefer-stable": true,
     "require": {
-        "mahocommerce/maho": "*",
-        "mahocommerce/maho-language-de_de": "*",
-        "mahocommerce/maho-language-fr_fr": "*",
+        "mahocommerce/maho": "dev-main",
+        "mahocommerce/maho-language-de_de": "dev-main",
+        "mahocommerce/maho-language-fr_fr": "dev-main",
         "cweagans/composer-patches": "^1.7"
     },
     "config": {

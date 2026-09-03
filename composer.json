@@ -8,7 +8,7 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
-        "mahocommerce/maho": "dev-main",
+        "mahocommerce/maho": "dev-multi-industry-theme-system",
         "mahocommerce/maho-language-de_de": "dev-main",
         "mahocommerce/maho-language-fr_fr": "dev-main",
         "cweagans/composer-patches": "^1.7"

@@ -8,7 +8,7 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
-        "mahocommerce/maho": "dev-multi-industry-theme-system",
+        "mahocommerce/maho": "dev-main",
         "mahocommerce/maho-language-de_de": "dev-main",
         "mahocommerce/maho-language-fr_fr": "dev-main",
         "mahocommerce/maho-language-it_it": "^26.7"

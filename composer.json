@@ -11,7 +11,8 @@
         "mahocommerce/maho": "dev-main",
         "mahocommerce/maho-language-de_de": "dev-main",
         "mahocommerce/maho-language-fr_fr": "dev-main",
-        "mahocommerce/maho-language-it_it": "^26.7"
+        "mahocommerce/maho-language-it_it": "^26.7",
+        "php": ">=8.5"
     },
     "config": {
         "allow-plugins": {

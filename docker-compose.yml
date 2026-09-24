@@ -5,11 +5,37 @@ services:
     build:
       dockerfile: .docker/php.Dockerfile
     environment:
-      - SERVER_NAME=demo.mahocommerce.com
-    ports:
-      - ${HTTP_PORT:-80}:80
-      - ${HTTPS_PORT:-443}:443
-      - ${HTTPS_PORT:-443}:443/udp
+      SERVER_NAME: demo.mahocommerce.com
+      # The default site block of dunglas/frankenphp has no Maho rules, and FrankenPHP ignores
+      # public/.htaccess. These are the rules of https://mahocommerce.com/hosting/web-server/
+      # (Caddy and FrankenPHP), without the routes of the legacy APIs. The default site block
+      # already sets the root and the encoding.
+      # Compose reads "$" as a variable, so "$$" is one "$" in the regular expressions.
+      CADDY_SERVER_EXTRA_DIRECTIVES: |
+        header X-Content-Type-Options "nosniff"
+        route {
+            @trace method TRACE TRACK
+            respond @trace 405
+            @hidden {
+                path_regexp hidden /\.
+                not path /.well-known/*
+                not path_regexp thumbs /\.thumbs/
+            }
+            respond @hidden 404
+            @private {
+                path *.txt *.json *.dist *.flag *.ip *.lock *.neon *.sample *.sh *.yaml *.yml
+                not path /robots.txt /llms.txt /manifest.json /api/docs.json
+                not path /.well-known/mcp.json /.well-known/mcp/server-card.json
+            }
+            respond @private 404
+            # Send the REST API v2 and the OAuth endpoints to rest.php.
+            @api {
+                path_regexp api ^/api(/|$$)
+                not file
+            }
+            rewrite @api /rest.php
+            php_server
+        }
     restart: unless-stopped
     volumes:
       - .:/app
@@ -17,3 +43,10 @@ services:
       - .docker/config:/config
     user: "1000:1000"
     tty: true
+    networks:
+      - demo
+
+networks:
+  demo:
+    name: demo
+    external: true

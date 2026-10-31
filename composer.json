@@ -12,7 +12,7 @@
         "mahocommerce/maho-language-de_de": "dev-main",
         "mahocommerce/maho-language-fr_fr": "dev-main",
         "mahocommerce/maho-language-it_it": "^26.7",
-        "php": ">=8.5"
+        "php": ">=8.5.1"
     },
     "config": {
         "allow-plugins": {
@@ -20,7 +20,7 @@
         },
         "optimize-autoloader": true,
         "platform": {
-            "php": "8.5"
+            "php": "8.5.1"
         }
     }
 }

@@ -16,7 +16,8 @@
     },
     "config": {
         "allow-plugins": {
-            "mahocommerce/maho-composer-plugin": true
+            "mahocommerce/maho-composer-plugin": true,
+            "php-http/discovery": false
         },
         "optimize-autoloader": true,
         "platform": {
